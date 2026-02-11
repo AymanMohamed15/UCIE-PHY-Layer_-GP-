@@ -1,0 +1,16 @@
+# Simulation
+work/
+*.wlf
+*.vcd
+*.log
+*.jou
+*.str
+
+# Modelsim / Questa
+transcript
+vsim.wlf
+*.qpg
+
+# Temporary
+*.zip
+*.rar
