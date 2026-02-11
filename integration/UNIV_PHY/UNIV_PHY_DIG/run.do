@@ -1,0 +1,49 @@
+vlib work
+vlog ./UNIV_PHY_DIG.v
+vlog ./UNIV_PHY_DIG_tb.sv
+vlog ../../LTSM_MB/*.v
+vlog ../../../RDI/*/*.v
+vlog ../../../LTSM/MBINIT/*.v
+vlog ../../../LTSM/MBTRAIN/*.v
+vlog ../../../LTSM/PHYRETRAIN/TX_PHYRETRAIN.v
+vlog ../../../LTSM/PHYRETRAIN/RX_PHYRETRAIN.v
+vlog ../../../LTSM/PHYRETRAIN/PHYRETRAIN_WRAPPER.v
+vlog ../../../LTSM/SBINIT/TX_SBINIT.v
+vlog ../../../LTSM/SBINIT/RX_SBINIT.v
+vlog ../../../LTSM/SBINIT/SBINIT_WRAPPER.v
+vlog ../../../LTSM/TRAINERROR/TX_TRAINERROR_HS.v
+vlog ../../../LTSM/TRAINERROR/RX_TRAINERROR_HS.v
+vlog ../../../LTSM/TRAINERROR/TRAINERROR_HS_WRAPPER.v
+vlog ../../../LTSM/TOP/LTSM_TOP.v
+vlog ../../../LTSM/SHARED_MODULE/nedege_detector.v
+vlog ../../../LTSM/SHARED_MODULE/clock_div_32.v
+vlog ../../../LTSM/SHARED_MODULE/clock_div_2.v
+vlog ../../../MB_Blocks/*/*.v
+vlog ../../../MB_Blocks/clock_tx_rx/clock_generator.v
+vlog ../../../MB_Blocks/clock_tx_rx/clock_detector.v
+vlog ../../../RX_D2C_POINT_TEST/rx_initiated_point_test_tx.v
+vlog ../../../RX_D2C_POINT_TEST/rx_initiated_point_test_rx.v
+vlog ../../../RX_D2C_POINT_TEST/rx_initiated_point_test_wrapper.v
+vlog ../../../TX_D2C_POINT_TEST/tx_initiated_point_test_tx.v
+vlog ../../../TX_D2C_POINT_TEST/tx_initiated_point_test_rx.v
+vlog ../../../TX_D2C_POINT_TEST/tx_initiated_point_test_wrapper.v
+vlog ../../../synchronizers/*.v
+vlog ../../../SB_TOP/SB_TOP_WRAPPER.v
+vlog ../../../SB_TOP/SHARED_MODULES/*.v
+vlog ../../../SB_TOP/SB_MB/ANALOG_MODELLING/*.sv
+vlog ../../../SB_TOP/SB_MB/SIDEBAND_RX/*.sv
+vlog ../../../SB_TOP/SB_MB/SIDEBAND_TOP_WRAPPER/*.sv
+vlog ../../../SB_TOP/SB_MB/SIDEBAND_TX/*.sv
+vlog ../../../SB_TOP/SB_RDI/*/*.v
+vlog ../../../SB_TOP/SB_RDI/*/*.sv
+vlog ../../../../Full_UVM_Env/SB_intf.sv
+vlog ../../../../Full_UVM_Env/MB_interface.sv
+vlog ../../../../Full_UVM_Env/RDI_interface.sv
+vlog ../../../../Full_UVM_Env/pack1.sv
+vlog ../../../../Full_UVM_Env/top.sv
+
+vsim -voptargs=+acc work.top -wlf "./waveforms/basic_rdi_test_adapter_requsted.wlf"
+do wave.do
+run -all 
+
+dataset save "./waveforms/basic_rdi_test_adapter_requsted.wlf" 
