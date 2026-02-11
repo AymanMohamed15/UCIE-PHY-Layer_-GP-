@@ -11,6 +11,6 @@ transcript
 vsim.wlf
 *.qpg
 
-# Temporary
+# Temp
 *.zip
 *.rar
